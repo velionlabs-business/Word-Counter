@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-slate-950 text-slate-100 antialiased selection:bg-violet-500/30 selection:text-violet-200 min-h-screen overflow-x-hidden;
+    font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom high-performance scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-950;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 rounded-full hover:bg-slate-700 transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  /* Premium Glassmorphism utility classes */
+  .glass-panel {
+    @apply bg-slate-900/60 backdrop-blur-md border border-slate-800/80 shadow-2xl;
+  }
+  
+  .glass-card {
+    @apply bg-slate-900/40 backdrop-blur-sm border border-slate-800/50 hover:border-slate-700/60 transition-all duration-300 shadow-lg;
+  }
+
+  .glass-input {
+    @apply bg-slate-950/70 backdrop-blur-sm border border-slate-800 focus:border-violet-500/80 focus:ring-1 focus:ring-violet-500/80 transition-all duration-200 outline-none;
+  }
+
+  /* Text gradient styles */
+  .text-glow-violet {
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.15);
+  }
+
+  .text-glow-emerald {
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+  }
+
+  /* Ambient glowing blob decoration support */
+  .glow-blob {
+    @apply absolute rounded-full filter blur-[100px] opacity-25 mix-blend-screen pointer-events-none;
+  }
+}
+
+/* Custom transitions and dynamic scrollbars for the editor */
+textarea {
+  scrollbar-gutter: stable;
+}
